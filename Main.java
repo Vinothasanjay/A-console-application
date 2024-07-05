@@ -23,6 +23,7 @@ if(board[r][c]==' '){
 board[r][c]=player;
 Gameover=Havewon(board,player);
 if(Gameover){
+PrintBoard(board);
 System.out.println("You won "+ player  );
 }
 else{
