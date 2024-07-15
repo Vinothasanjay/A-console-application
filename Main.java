@@ -12,6 +12,7 @@ board[r][c]=' ';
 }
 char player='X';
 boolean Gameover=false;
+int movecount=0;
 while(!Gameover){
 PrintBoard(board);
 System.out.println("Player : "+player);
@@ -21,10 +22,16 @@ int c=s.nextInt();
 //Check whether the r,c is empty
 if(board[r][c]==' '){
 board[r][c]=player;
+movecount++;
 Gameover=Havewon(board,player);
 if(Gameover){
 PrintBoard(board);
 System.out.println("You won "+ player  );
+break;
+}
+else if(movecount==9){
+  System.out.println("It is a draw");
+  break;
 }
 else{
 if(player=='X'){
